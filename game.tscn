@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://s62ndtyxfesp"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_8t81m"]
+[ext_resource type="PackedScene" uid="uid://csb2tpvksgg2w" path="res://die.tscn" id="2_y3vim"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_8t81m")
+
+[node name="Die" parent="." instance=ExtResource("2_y3vim")]

@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://csb2tpvksgg2w"]
+
+[ext_resource type="Script" path="res://die.gd" id="1_isccu"]
+[ext_resource type="Texture2D" uid="uid://bev2fdldi6m12" path="res://dice/diceWhite.png" id="1_pmw2v"]
+[ext_resource type="SpriteFrames" uid="uid://csfvuqntkp080" path="res://dice_sprite_frames.tres" id="3_jxp5n"]
+
+[sub_resource type="Animation" id="Animation_61h0r"]
+resource_name = "roll"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DieSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 1), Vector2i(2, 1), Vector2i(0, 1), Vector2i(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("DieSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_knnos"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DieSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3c0go"]
+_data = {
+"RESET": SubResource("Animation_knnos"),
+"roll": SubResource("Animation_61h0r")
+}
+
+[node name="Die" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_isccu")
+
+[node name="DieSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(286, 68)
+texture = ExtResource("1_pmw2v")
+hframes = 3
+vframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3c0go")
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(58, 42)
+sprite_frames = ExtResource("3_jxp5n")
+frame_progress = 0.558707
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

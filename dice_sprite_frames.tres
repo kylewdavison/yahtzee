@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://csfvuqntkp080"]
+
+[ext_resource type="Texture2D" uid="uid://bev2fdldi6m12" path="res://dice/diceWhite.png" id="1_83pgs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yipyw"]
+atlas = ExtResource("1_83pgs")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpie4"]
+atlas = ExtResource("1_83pgs")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esyl3"]
+atlas = ExtResource("1_83pgs")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpe8e"]
+atlas = ExtResource("1_83pgs")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i7yq"]
+atlas = ExtResource("1_83pgs")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mauc"]
+atlas = ExtResource("1_83pgs")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yipyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpie4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esyl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpe8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i7yq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mauc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
