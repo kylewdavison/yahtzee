@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://bev2fdldi6m12" path="res://dice/diceWhite.png" id="1_pmw2v"]
 [ext_resource type="SpriteFrames" uid="uid://csfvuqntkp080" path="res://dice_sprite_frames.tres" id="3_jxp5n"]
 
+[sub_resource type="Animation" id="Animation_knnos"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DieSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_61h0r"]
 resource_name = "roll"
 loop_mode = 1
@@ -30,21 +45,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(),
 "transitions": PackedFloat32Array(),
 "values": []
-}
-
-[sub_resource type="Animation" id="Animation_knnos"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DieSprite:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3c0go"]
@@ -78,7 +78,7 @@ sprite_frames = ExtResource("3_jxp5n")
 frame_progress = 0.558707
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.001
 one_shot = true
 autostart = true
 

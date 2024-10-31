@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://s62ndtyxfesp"]
+[gd_scene load_steps=4 format=3 uid="uid://s62ndtyxfesp"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_8t81m"]
 [ext_resource type="PackedScene" uid="uid://csb2tpvksgg2w" path="res://die.tscn" id="2_y3vim"]
+[ext_resource type="PackedScene" uid="uid://bgo3geymawr2v" path="res://player.tscn" id="3_ewy68"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_8t81m")
 
 [node name="Die" parent="." instance=ExtResource("2_y3vim")]
+visible = false
+
+[node name="Guy" parent="." instance=ExtResource("3_ewy68")]
+position = Vector2(189, 32)

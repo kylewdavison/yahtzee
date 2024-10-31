@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgo3geymawr2v"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_6ln3c"]
+[ext_resource type="PackedScene" uid="uid://c0ex50ul76fwd" path="res://guy.tscn" id="2_kg36t"]
+[ext_resource type="PackedScene" uid="uid://csb2tpvksgg2w" path="res://die.tscn" id="3_tankj"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_6ln3c")
+
+[node name="Guy" parent="." instance=ExtResource("2_kg36t")]
+unique_name_in_owner = true
+position = Vector2(113, 104)
+scale = Vector2(5, 5)
+
+[node name="Die" parent="." instance=ExtResource("3_tankj")]
+position = Vector2(59, -26)
